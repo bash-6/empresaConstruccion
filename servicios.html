@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Home</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="./css/normalize.css"/>
+		<link rel="stylesheet" href="./css/movil.css"/>
+		<link rel="stylesheet" href="./css/style.css"/>
+		<link rel="stylesheet" media="(min-width: 800px)" href="./css/tablet.css" />
+		<link rel="stylesheet" media="(min-width: 1000px)" href="./css/desktop.css" />
+	</head>
+	<body>
+
+		<mi-header link='3'></mi-header>
+
+		<main>
+			<section id="servicio"></section>
+			<section class="acerca sombraBlanca">
+				<h2 class="titulo">Sobre Nosotros</h2>
+				<p class="parrafo">
+				servicios generales que responde a las necesidades de clientes públicos y privados para la ejecución de sus proyectos. Somos expertos en obra nueva, en renovar y acondicionar todo tipo de espacios.
+				</p>
+				<button class="botonLight"><a href="./acerca.html">leer mas</a></button>
+			</section>
+		</main>
+		<aside>
+			<h2>Categorias</h2>
+			<section id="botonCategorias">
+				<button data-servicio="drywall" class="botonDark">drywall</button>
+				<button data-servicio="pintura" class="botonDark">pintura</button>
+				<button data-servicio="mayolica" class="botonDark">mayolica</button>
+				<button data-servicio="gasfiteria" class="botonDark">gasfiteria</button>
+				<button data-servicio="remodelacion" class="botonDark">remodelacion</button>
+				<button data-servicio="electricidad" class="botonDark">electricidad</button>
+				<button data-servicio="melamine" class="botonDark">melamine</button>
+			</section>
+		</aside>
+		<mi-footer></mi-footer>
+		<script>
+const main = document.querySelector("#servicio");
+function insertNodo(template) {
+	let servicio = document.querySelector(`#${template}`).content.cloneNode(true);
+	main.innerHTML=''
+	main.appendChild(servicio)
+}
+let botones = document.querySelectorAll('#botonCategorias button');
+[...botones].forEach(boton =>{
+	boton.addEventListener('click',function(e) {
+	[...botones].forEach(boton =>{
+		boton.style.backgroundColor='var(--oscuroDark)'
+	});
+	e.target.style.backgroundColor='var(--amarilloLight)'
+		switch (e.target.dataset.servicio) {
+			case 'drywall':
+				insertNodo('drywall');
+			break;
+			case 'pintura':
+				insertNodo('pintura');
+			break;
+			case 'mayolica':
+				insertNodo('mayolica');
+			break;
+			case 'gasfiteria':
+				insertNodo('gasfiteria');
+			break;
+			case 'remodelacion':
+				insertNodo('remodelacion');
+			break;
+			case 'electricidad':
+				insertNodo('electricidad');
+			break;
+			case 'melamine':
+				insertNodo('melamine');
+			break;
+			
+			default:
+				
+		}
+	});
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('#botonCategorias button')[0].style.backgroundColor='var(--amarilloLight)'
+	insertNodo('drywall');
+});
+		</script>
+		<script src="./js/header.js" defer></script>
+		<script src="./js/footer.js" defer></script>
+	</body>
+</html>
+<template id="drywall">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en drywall</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Drywall</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="pintura">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en pintura</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Pintura</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+				<!-- <button class="botonLight"><a href="./servicios.html">ver mas</a></button> -->
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="mayolica">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en mayolica</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Mayolica</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="gasfiteria">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en gasfiteria</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Gasfiteria</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="remodelacion">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en remodelacion</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Remodelacion</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="electricidad">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en electricidad</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Electricidad</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>
+<template id="melamine">
+	<section class="servicio">
+		<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>trabajo en melamine</figcaption></figure>
+		<div class="contenido">
+			<h2>Expertos en Melamine</h2>
+			<ul class="parrafo">
+				<li>descripcion de melamine 1</li>
+				<li>descripcion de melamine 2</li>
+				<li>descripcion de melamine 3</li>
+				<li>descripcion de melamine 4</li>
+				<li>descripcion de melamine 5</li>
+			</ul>
+			<button class="botonLight"><i class="fa-brands fa-whatsapp-square"></i>contactar</button>
+		</div>
+		
+	</section>
+	<section class="proyectos" class="drywall">
+		<div>
+			<h2 class="titulo">proyectos</h2>
+		</div>
+		<div>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+			<figure><img src="https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197611_960_720.jpg" alt=""><figcaption>proyecto 1</figcaption></figure>
+		</div>
+	</section>
+</template>

@@ -1,0 +1,103 @@
+:root{
+	--oscuroDark:#2F2E41;
+	--oscuroGrey:#3F3D56;
+	--blancoNormal:#ffffff;
+	--amarilloLight:#FED253;
+	--amarilloDark:#FFBA63;
+	--atras:-1;
+	--medio:1;
+	--adelante:10;
+	--logo: 'Anton', sans-serif;
+	--texto: 'Inter', sans-serif;
+	--titulo: 'Poppins', sans-serif;
+}
+a{
+	color:inherit;
+	text-decoration: none;
+}
+img{
+	width: 100%;
+}
+body{
+	font-family: var(--texto);
+}
+h1{
+	text-align: center;
+}
+
+.sombraBlanca{
+	box-shadow: 0 4px 8px rgba(89,73,30,.16);
+	padding-bottom: 20px;
+}
+
+.logoText{
+	font-family: var(--logo);
+	font-size: 1.3rem;
+}
+.botonLight{
+	min-height: 40px;
+	background: var(--amarilloLight);
+	border:none;
+	border-radius:10px;
+	padding: 7px 10px;
+}
+.botonDark{
+	min-height: 40px;
+	color:var(--blancoNormal);
+	background: var(--oscuroDark);
+	border:none;
+	border-radius:10px;
+	padding: 7px 10px;
+}
+.titulo{
+	position: relative;
+	z-index:-1;
+	/* width:50%; */
+	font-family: var(--titulo);
+}
+.titulo:before{
+	content:'';
+	position: absolute;
+	z-index:-1;
+	height:3px;
+	background: var(--amarilloDark);
+	width:80px;
+	bottom:-2px;
+}
+
+.parrafo{
+	padding: 15px;
+	line-height:1.5;
+}
+.contenedor-titulo{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+main section{
+	margin-top: 40px;
+}
+.acerca{
+	display: grid;
+}
+.acerca button{
+	justify-self:center;
+}
+figcaption{
+	text-align: center;
+}
+.contenido{
+	display: grid;
+}
+.contenido button{
+	justify-self:center;
+}
+	
+.contenido ul{
+	display: grid;
+	justify-content:center;
+}
+h2{
+	text-align: center;
+}

@@ -1,0 +1,23 @@
+#servicio{
+	margin: 30px auto;
+}
+.servicio{
+	display: flex;
+	align-items: center;
+}
+.servicio figure,
+.servicio .contenido{
+	flex:1;
+}
+aside section{
+	justify-content: center;
+}
+.proyectos {
+	margin: 30px auto;
+}
+.proyectos div:last-child{
+	display: flex;
+}
+.proyectos div:last-child figure{
+	flex:1;
+}

@@ -1,0 +1,61 @@
+body{
+	grid-template-areas: 'header header header'
+	'servicios main main'
+	'. main main'
+	'footer footer footer';
+}
+@media screen and (min-width: 800px) {
+	
+}
+aside{
+	overflow:visible;
+	height:auto;
+}
+aside>h2{
+	display: block;
+}
+aside section{
+	flex-direction:column;
+	/* height:90%; */
+	min-width: 300px;
+}
+
+.botonServicios{
+	width:90%;
+	max-width: 250px;
+	min-height: 50px;
+	margin-left: auto;margin-right: auto;
+}
+main{
+	width:90%;
+	margin-left: auto;margin-right: auto;
+}
+
+.acerca{
+	margin: 100px auto;
+}
+
+footer{
+	display: grid;
+	grid-template-areas: 'logo . social'
+	'barra barra barra'
+	'autor autor autor';
+}
+.logo-footer{
+	grid-area:logo;
+}
+
+.sociles-footer{
+	grid-area:social;
+}
+
+#footer>div{
+	grid-area:barra;
+	width:100%;
+	margin: auto;
+	height:2px;
+}
+
+footer>p{
+	grid-area:autor;
+}
